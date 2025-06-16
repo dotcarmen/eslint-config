@@ -1,0 +1,32 @@
+{
+  "name": "@dotcarmen/eslint-config",
+  "version": "1.0.0",
+  "description": "Carmen's shareable eslint configuration.",
+  "type": "module",
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "author": "Carmen <carmen@dotcarmen.dev>",
+  "license": "CC0-1.0",
+  "packageManager": "pnpm@10.5.2",
+  "dependencies": {
+    "@eslint/css": "^0.9.0",
+    "@eslint/js": "^9.29.0",
+    "@eslint/json": "^0.12.0",
+    "@eslint/markdown": "^6.5.0",
+    "eslint-plugin-astro": "^1.3.1",
+    "eslint-plugin-prettier": "^5.4.1",
+    "eslint-plugin-svelte": "^3.9.2",
+    "typescript-eslint": "^8.34.0"
+  },
+  "peerDependencies": {
+    "eslint": "^9"
+  },
+  "devDependencies": {
+    "eslint": "^9"
+  },
+  "exports": {
+    ".": "./eslint.config.js"
+  }
+}
