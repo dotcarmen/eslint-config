@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/jsconfig",
+  "files": ["index.js", "eslint.config.js"],
+  "compilerOptions": {
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "allowJs": true,
+    "checkJs": true,
+  },
+}

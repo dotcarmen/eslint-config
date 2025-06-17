@@ -1,0 +1,7 @@
+singleQuote: true
+
+overrides:
+  - files:
+      - jsconfig.json
+    options:
+      parser: jsonc
