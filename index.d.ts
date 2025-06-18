@@ -1,3 +1,4 @@
 import { ConfigArray } from 'typescript-eslint';
 
-export default ConfigArray;
+const config: ConfigArray;
+export default config;

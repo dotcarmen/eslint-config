@@ -8,7 +8,6 @@ import astro from 'eslint-plugin-astro';
 import prettierPlugin from 'eslint-plugin-prettier';
 import prettier from 'eslint-plugin-prettier/recommended';
 import tseslint from 'typescript-eslint';
-import tsParser from '@typescript-eslint/parser';
 
 export default tseslint.config(
   {
