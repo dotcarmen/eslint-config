@@ -8,6 +8,7 @@ import astro from 'eslint-plugin-astro';
 import prettierPlugin from 'eslint-plugin-prettier';
 import prettier from 'eslint-plugin-prettier/recommended';
 import tseslint from 'typescript-eslint';
+import tsParser from '@typescript-eslint/parser';
 
 export default tseslint.config(
   {
@@ -27,7 +28,18 @@ export default tseslint.config(
     // TODO: why ignores and not files???
     // files: ['**/*.astro', '**/*.astro/**/*'],
     ignores: ['**/*.{css,json,jsonc,json5,md}'],
-    extends: [astro.configs.recommended],
+    extends: [
+      astro.configs.recommended,
+      {
+        name: '@dotcarmen/astro-parser',
+        files: ['**/*.astro', '**/*.astro/**/*'],
+        languageOptions: {
+          parserOptions: {
+            parser: tsParser,
+          },
+        },
+      },
+    ],
   },
 
   {

@@ -1,6 +1,6 @@
 {
   "name": "@dotcarmen/eslint-config",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Carmen's shareable eslint configuration.",
   "type": "module",
   "main": "index.js",
@@ -26,6 +26,7 @@
     "@eslint/js": "^9",
     "@eslint/json": "^0",
     "@eslint/markdown": "^6",
+    "@typescript-eslint/parser": "^8.34.1",
     "eslint": "^9",
     "eslint-plugin-astro": "^1",
     "eslint-plugin-prettier": "^5",
