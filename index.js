@@ -2,7 +2,8 @@
 
 import css from '@eslint/css';
 import js from '@eslint/js';
-import json from '@eslint/json';
+import jsonc from 'eslint-plugin-jsonc';
+import jsonSchemaValidator from 'eslint-plugin-json-schema-validator';
 import markdown from '@eslint/markdown';
 import astro from 'eslint-plugin-astro';
 import prettierPlugin from 'eslint-plugin-prettier';
@@ -16,7 +17,8 @@ export default tseslint.config(
       '@astro': astro,
       '@css': css,
       '@js': js,
-      '@json': json,
+      '@jsonc': jsonc,
+      '@json-schema-validator': jsonSchemaValidator,
       '@md': markdown,
       '@typescript-eslint': tseslint.plugin,
       '@prettier': prettierPlugin,
@@ -67,8 +69,11 @@ export default tseslint.config(
     name: '@dotcarmen/json',
     files: ['**/*.json'],
     ignores: ['.{vscode,zed}/**/*', '{j,t}sconfig.json', '{j,t}sconfig.*.json'],
-    language: '@json/json',
-    extends: [json.configs.recommended],
+    extends: [
+      jsonc.configs['flat/recommended-with-json'],
+      jsonSchemaValidator.configs['flat/recommended'],
+      jsonc.configs['flat/prettier'],
+    ],
   },
 
   {
@@ -79,20 +84,26 @@ export default tseslint.config(
       '{j,t}sconfig.json',
       '{j,t}sconfig.*.json',
     ],
-    extends: [json.configs.recommended],
-    language: '@json/jsonc',
-    languageOptions: {
-      // @ts-expect-error tseslint for some reason is very strict about
-      // typing for languageOptions
-      allowTrailingCommas: true,
-    },
+    extends: [
+      jsonc.configs['flat/recommended-with-jsonc'],
+      jsonSchemaValidator.configs['flat/recommended'],
+      jsonc.configs['flat/prettier'],
+    ],
+    // languageOptions: {
+    //   // @ts-expect-error tseslint for some reason is very strict about
+    //   // typing for languageOptions
+    //   allowTrailingCommas: true,
+    // },
   },
 
   {
     name: '@dotcarmen/json5',
     files: ['**/*.json5'],
-    language: '@json/json5',
-    extends: [json.configs.recommended],
+    extends: [
+      jsonc.configs['flat/recommended-with-json5'],
+      jsonSchemaValidator.configs['flat/recommended'],
+      jsonc.configs['flat/prettier'],
+    ],
   },
 
   {
