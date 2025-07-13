@@ -1,6 +1,6 @@
 {
   "name": "@dotcarmen/eslint-config",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Carmen's shareable eslint configuration.",
   "type": "module",
   "main": "index.js",
@@ -24,7 +24,7 @@
   "peerDependencies": {
     "@eslint/css": "0",
     "@eslint/js": "9",
-    "@eslint/markdown": "6",
+    "@eslint/markdown": "6 || 7",
     "@typescript-eslint/parser": "8",
     "eslint": "9",
     "eslint-config-prettier": "10",
